@@ -68,6 +68,17 @@ jQuery(document).ready(function($) {
     });
   }
 
+  function simpleParallax(intensity, element) {
+    $(window).scroll(function() {
+      var scrollTop = $(window).scrollTop();
+      var imgPos = scrollTop / intensity + 'px';
+      element.css('transform', 'translateY(' + imgPos + ')');
+    });
+  }
+  
+  simpleParallax(6, $('.parallax-star'));
+  simpleParallax(-6, $('.parallax-ship'));
+
   // Portfolio slider
   $('.portfolio-slider').each(function(i, el) {
     var $this = $(this);
