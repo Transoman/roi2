@@ -4,6 +4,26 @@
     margin-bottom: 20px
     &:last-of-type
       margin-bottom: 0
+    &--textarea
+      &::before
+        content: ''
+        position: absolute
+        top: -4px
+        left: -4px
+        right: -4px
+        bottom: -4px
+        border: 1px solid rgba(#fff, 0.15)
+        z-index: -1
+      &::after
+        content: ''
+        position: absolute
+        top: -5px
+        left: -5px
+        right: -5px
+        bottom: -5px
+        border: 3px solid transparent
+        border-image: linear-gradient(to bottom, #fff 0%, #fff 100%)
+        z-index: -1
   &__field, &__textarea
     width: 100%
     padding: 23px 30px
@@ -23,6 +43,7 @@
     flex-wrap: wrap
     .form-group
       width: 49%
+      flex-grow: 1
       &:nth-child(1)
         margin-right: 5px
         &::before
@@ -72,7 +93,7 @@
         width: 100%
   label.error
     position: absolute
-    background-color: $accent
+    background-color: tomato
     left: 20px
     bottom: 100%
     width: 200px
@@ -90,7 +111,7 @@
       height: 0
       border-style: solid
       border-width: 5px 5px 0 5px
-      border-color: $accent transparent transparent transparent
+      border-color: tomato transparent transparent transparent
 
 +media-breakpoint-down(xs)
   .form
@@ -99,15 +120,17 @@
       .form-group
         width: 100%
         &:nth-child(1)
-          .form__field
-            border-radius: 10px
-            border-width: 2px
+          &::before
+            border-right: 1px solid rgba(#fff, 0.15)
+          &::after
+            right: -5px
         &:nth-child(2)
-          .form__field
-            border-radius: 10px
-            border-width: 2px
+          &::before
+            border-left: 1px solid rgba(#fff, 0.15)
+          &::after
+            left: -5px
     &-group
-      margin-bottom: 10px
+      margin-bottom: 15px
     &__field
       padding: 15px 15px
       font-size: 16px
