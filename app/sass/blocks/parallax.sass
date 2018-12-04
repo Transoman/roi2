@@ -7,22 +7,23 @@
   &-ship
     left: 75%
     bottom: -200px
-// .sputnik
-//   top: -130px
-//   right: 80%
+  &-r2d2
+    bottom: 0
+    left: 91%
+    +transition
+    animation: road 10s ease-in-out infinite
 
-// .meduza
-//   bottom: -100px
-//   left: 80%
-
-// .moon
-//   left: 83%
-//   bottom: -120px
-
-// .skulpture
-//   left: 50%
-//   bottom: -370px
-//   z-index: 0
+@keyframes road
+  0%
+    transform: translateX(0)
+  20%
+    transform: translateX(-20px)
+  40%
+    transform: translateX(-60px)
+  60%
+    transform: translateX(-20px)
+  100%
+    transform: translateX(0)
 
 +media-breakpoint-down(lg)
   .skulpture
