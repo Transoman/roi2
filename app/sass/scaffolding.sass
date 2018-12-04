@@ -38,7 +38,7 @@ img
   height: auto
 
 a
-  color: $dodger-blue
+  color: $bright-turquoise
   +transition
   &:hover
     text-decoration: none
@@ -47,7 +47,7 @@ a
     outline: none
 
 h1, h2, h3, h4, h5, h6
-  font-family: $bradobrei
+  font-family: $second-font
   font-weight: normal
   color: #fff
 
@@ -58,7 +58,7 @@ h1
 
 h2
   margin-bottom: 30px
-  font-size: 60px
+  font-size: 48px
 
 h3
   font-size: 36px
@@ -76,32 +76,43 @@ h3
 
 /* Buttons */
 .btn
+  position: relative
   display: inline-block
   vertical-align: middle
   width: 100%
-  max-width: 240px
+  max-width: 280px
   padding: 20px 15px
-  font-family: $main-font
-  font-size: 20px
-  font-weight: 700
-  color: #fff
+  font-family: $second-font
+  font-size: 16px
+  color: $woodsmoke-2
   text-align: center
-  background-color: $pomegranate
-  background-image: linear-gradient(to right, $red-orange, $pomegranate)
+  background-color: $accent
   border: 0
-  border-radius: 10px
+  border-radius: 50px
   outline: none
   text-decoration: none
   cursor: pointer
   user-select: none
   transition: all .25s ease
   text-transform: uppercase
-  box-shadow: inset 0 1px 0 rgba(#fff, 0.25), inset 0 -1px 0 rgba($thunder, 0.5), 0 0 100px rgba($accent, 0.25)
+  box-shadow: 0 15px 45px rgba($accent, 0.3)
+  overflow: hidden
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    width: 60px
+    background-color: rgba(#fff, 0.5)
+    filter: blur(20px)
+    transform: translateX(-200px) skewX(-15deg)
+    +transition(1s)
   &:hover
-    background-image: linear-gradient(to right, lighten($red-orange, 2%), $pomegranate)
+    &::before
+      transform: translateX(400px) skewX(-15deg)
   &:active
-    background-image: none
-    color: #fff
+    transform: translateY(5px)
   &:focus
     outline: none
   &[disabled]
@@ -238,7 +249,7 @@ h3
 
 .section-wrap-1
   position: relative
-  background: url('../img/hero-bg.png') no-repeat center top
+  // background: url('../img/hero-bg.png') no-repeat center top
   // &::after
   //   content: ''
   //   position: absolute
