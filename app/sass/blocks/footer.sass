@@ -1,0 +1,31 @@
+.footer
+  position: relative
+  padding: 100px 0
+  z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    +size(120px)
+    background-color: $dodger-blue
+    z-index: -1
+
+.copyright
+  margin: 0
+  font-size: 18px
+  font-weight: 300
+  opacity: 0.2
+
++media-breakpoint-down(lg)
+  .footer
+    padding: 50px 0
+
++media-breakpoint-down(md)
+  .copyright
+    text-align: center
+
++media-breakpoint-down(xs)
+  .footer
+    &::before
+      +size(60px)

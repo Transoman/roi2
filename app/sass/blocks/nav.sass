@@ -1,0 +1,91 @@
+.nav
+  &__phone
+    display: none
+
+.nav-list
+  margin: 0
+  padding: 0
+  list-style: none
+  display: flex
+  li
+    margin-right: 40px
+    &:last-child
+      margin-right: 0
+    a
+      font-size: 24px
+      color: $main-color
+      &:hover
+        color: $accent
+
+.nav-toggle
+  display: none
+  position: absolute
+  right: 0
+  top: 50%
+  width: 28px
+  height: 15px
+  padding: 0
+  margin: 0
+  outline: none
+  border: none
+  background: none
+  z-index: 101
+  cursor: pointer
+  transform: translateY(-50%)
+  +transition
+  &:focus
+    outline: none
+  &__line
+    position: relative
+    display: block
+    height: 2px
+    width: 100%
+    background: $dodger-blue
+    +transition
+    &::after, &::before
+      content: ''
+      position: absolute
+      left: 0
+      display: block
+      height: 2px
+      width: 100%
+      background: $dodger-blue
+      +transition
+    &::before
+      top: -6px
+    &::after
+      top: 6px
+  &.active
+    .nav-toggle__line
+      background: transparent
+      &::after
+        top: 0
+        transform: rotate(45deg)
+      &::before
+        top: 0
+        transform: rotate(-45deg)
+
++media-breakpoint-down(md)
+  .header__nav
+    position: fixed
+    width: 100%
+    height: 100vh
+    left: 0
+    top: 0
+    transform: translateY(-100%)
+    background-color: $thunder-2
+    z-index: 1
+    +transition
+    &.open
+      transform: translateY(0)
+
+
+  .nav-list
+    padding: 40px 0 0 20px
+    flex-direction: column
+    li
+      margin-right: 0
+      margin-bottom: 15px
+
+  .nav-toggle
+    display: block

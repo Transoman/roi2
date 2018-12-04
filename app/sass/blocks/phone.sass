@@ -1,0 +1,25 @@
+.phone
+  &__link
+    display: inline-block
+    margin-bottom: 10px
+    font-size: 36px
+    font-weight: 700
+    line-height: 1
+    color: #fff
+  &__callback, &__email
+    font-size: 18px
+    text-decoration: underline
+  
+
++media-breakpoint-down(md)
+  .phone
+    &__link
+      font-size: 26px
+
++media-breakpoint-down(xs)
+  .phone
+    &__link
+      font-size: 20px
+      margin-bottom: 5px
+    &__callback
+      font-size: 16px

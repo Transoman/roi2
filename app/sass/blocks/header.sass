@@ -1,0 +1,27 @@
+.header
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  padding: 50px 0 10px
+  z-index: 10
+  +transition(background 0.25s)
+  &__wrap
+    position: relative
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &.sticky
+    position: fixed
+    padding: 10px 0
+    background-color: rgba(#141115, 0.8)
+
++media-breakpoint-down(lg)
+  .header
+    padding-top: 30px
+
++media-breakpoint-down(md)
+  .header
+    &__phone
+      padding-right: 50px
+      text-align: right

@@ -1,0 +1,283 @@
+// *,
+// *:before,
+// *:after
+//  -webkit-box-sizing: border-box
+//  -moz-box-sizing: border-box
+//  box-sizing: border-box
+
+/* Clearfix for float elements */
+.clearfix:before,
+.clearfix:after
+  content: ''
+  display: table
+
+.clearfix:after 
+  clear: both
+
+.clearfix
+  zoom: 1 /* For IE 6/7 hasLayout */
+
+
+/* Common styles */
+html
+  overflow-x: hidden
+
+body
+  margin: 0
+  padding: 0
+  min-width: 320px
+  font-family: $main-font
+  font-size: 14px
+  line-height: 1.3
+  color: $main-color
+  overflow-x: hidden
+  background: #141115 url('../img/bg.jpg') no-repeat center top / cover
+
+img
+  max-width: 100%
+  height: auto
+
+a
+  color: $dodger-blue
+  +transition
+  &:hover
+    text-decoration: none
+  &:focus
+    text-decoration: none
+    outline: none
+
+h1, h2, h3, h4, h5, h6
+  font-family: $bradobrei
+  font-weight: normal
+  color: #fff
+
+h1
+  font-size: 90px
+  font-weight: 400
+  line-height: 1.1
+
+h2
+  margin-bottom: 30px
+  font-size: 60px
+
+h3
+  font-size: 36px
+
+/* Hidden element */
+.visually-hidden
+  position: absolute
+  width: 1px
+  height: 1px
+  margin: -1px
+  padding: 0
+  border: 0
+  clip: rect(0 0 0 0)
+  overflow: hidden
+
+/* Buttons */
+.btn
+  display: inline-block
+  vertical-align: middle
+  width: 100%
+  max-width: 240px
+  padding: 20px 15px
+  font-family: $main-font
+  font-size: 20px
+  font-weight: 700
+  color: #fff
+  text-align: center
+  background-color: $pomegranate
+  background-image: linear-gradient(to right, $red-orange, $pomegranate)
+  border: 0
+  border-radius: 10px
+  outline: none
+  text-decoration: none
+  cursor: pointer
+  user-select: none
+  transition: all .25s ease
+  text-transform: uppercase
+  box-shadow: inset 0 1px 0 rgba(#fff, 0.25), inset 0 -1px 0 rgba($thunder, 0.5), 0 0 100px rgba($accent, 0.25)
+  &:hover
+    background-image: linear-gradient(to right, lighten($red-orange, 2%), $pomegranate)
+  &:active
+    background-image: none
+    color: #fff
+  &:focus
+    outline: none
+  &[disabled]
+    background-color: #e5e5e5
+    cursor: not-allowed
+    color: #fff
+
+.btn-trs
+  position: relative
+  display: inline-block
+  vertical-align: middle
+  padding: 10px 45px
+  border: 2px solid $thunder-2
+  border-radius: 10px
+  color: $don-juan
+  font-size: 18px
+  z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    top: -37px
+    left: -37px
+    display: block
+    width: 225px
+    height: 120px
+    background: url('../img/btn.svg') no-repeat center
+    z-index: -1
+    opacity: 0
+    +transition
+  &:hover
+    color: #fff
+    &::before
+      animation: text-flicker-in-glow 1s linear both
+
+
+@keyframes text-flicker-in-glow
+  0%
+    opacity: 0
+  10%
+    opacity: 0
+    text-shadow: none
+  10.1%
+    opacity: 1
+    text-shadow: none
+  10.2%
+    opacity: 0
+    text-shadow: none
+  20%
+    opacity: 0
+    text-shadow: none
+  20.1%
+    opacity: 1
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.25)
+  20.6%
+    opacity: 0
+    text-shadow: none
+  30%
+    opacity: 0
+    text-shadow: none
+  30.1%
+    opacity: 1
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25)
+  30.5%
+    opacity: 1
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25)
+  30.6%
+    opacity: 0
+    text-shadow: none
+  45%
+    opacity: 0
+    text-shadow: none
+  45.1%
+    opacity: 1
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25)
+  50%
+    opacity: 1
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25)
+  55%
+    opacity: 1
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25)
+  55.1%
+    opacity: 0
+    text-shadow: none
+  57%
+    opacity: 0
+    text-shadow: none
+  57.1%
+    opacity: 1
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35)
+  60%
+    opacity: 1
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35)
+  60.1%
+    opacity: 0
+    text-shadow: none
+  65%
+    opacity: 0
+    text-shadow: none
+  65.1%
+    opacity: 1
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1)
+  75%
+    opacity: 1
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1)
+  75.1%
+    opacity: 0
+    text-shadow: none
+  77%
+    opacity: 0
+    text-shadow: none
+  77.1%
+    opacity: 1
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1)
+  85%
+    opacity: 1
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1)
+  85.1%
+    opacity: 0
+    text-shadow: none
+  86%
+    opacity: 0
+    text-shadow: none
+  86.1%
+    opacity: 1
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1)
+  100%
+    opacity: 1
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1)
+
+.section-desc
+  margin-bottom: 40px
+  font-size: 24px
+  text-align: center
+
+.section-wrap-1
+  position: relative
+  background: url('../img/hero-bg.png') no-repeat center top
+  // &::after
+  //   content: ''
+  //   position: absolute
+  //   left: 48%
+  //   top: 66%
+  //   width: 980px
+  //   height: 1130px
+  //   background: url('../img/skulpture.png') no-repeat center / contain
+  //   z-index: 1
+
++media-breakpoint-down(lg)
+  h1
+    font-size: 70px
+  h2
+    font-size: 50px
+
++media-breakpoint-down(md)
+  h3
+    font-size: 30px
+
++media-breakpoint-down(sm)
+  h1
+    font-size: 50px
+  h2
+    font-size: 40px
+    text-align: center
+
+  .section-desc
+    font-size: 18px
+
++media-breakpoint-down(xs)
+  h1
+    font-size: 40px
+  h2
+    font-size: 32px
+  h3
+    font-size: 26px
+
+  .btn
+    font-size: 16px
+    padding-top: 17px
+    padding-bottom: 17px
