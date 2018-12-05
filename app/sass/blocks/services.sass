@@ -47,39 +47,31 @@
     &:nth-child(3)
       margin-top: 370px
     &:nth-child(4)
-      margin-top: -100px
+      margin-top: -170px
       margin-left: 120px
   &__inner
-    padding: 0 35px
-  &__icon
     position: relative
-    display: inline-block
-    margin-bottom: 30px
+    padding-right: 60px
+    padding-top: 105px
+  &__icon
+    position: absolute
+    top: 0
+    left: 0
     z-index: 1
-    &::before
-      content: ''
-      position: absolute
-      top: 50%
-      left: -60px
-      width: 200px
-      height: 175px
-      transform: translateY(-50%)
-      background: url('../img/services-circle.png') no-repeat center / contain
-      z-index: -1
     &--orange
       img
-        filter: drop-shadow(0 0 30px $ecstasy)
+        filter: drop-shadow(0 0 30px $balze-orange)
     &--green
       img
-        filter: drop-shadow(0 0 30px $alpine)
+        filter: drop-shadow(0 6px 20px $accent)
       &::before
         left: -65px
-    &--purple
+    &--blue
       img
-        filter: drop-shadow(0 0 30px $amethyst)
+        filter: drop-shadow(0 0 30px $azure-radiance)
     &--pink
       img
-        filter: drop-shadow(0 0 30px $red-violet)
+        filter: drop-shadow(0 0 20px $amaranth)
 
 +media-breakpoint-down(lg)
   .services
@@ -103,7 +95,8 @@
       &:nth-child(4)
         margin-top: 0
     &__inner
-      padding: 0
+      padding-right: 0
+      padding-top: 80px
     &__icon
       img
         width: 60px
@@ -128,12 +121,23 @@
   .services-list
     &__item
       h3
-        font-size: 24px
+        font-size: 20px
+        br
+          display: none
+      p
+        br
+          display: none
 
 +media-breakpoint-down(xs)
   .services-list
+    margin-bottom: 0
     &__item
       text-align: center
+      p
+        margin-bottom: 10px
+    &__icon
+      left: 50%
+      transform: translateX(-50%)
 
   .services
     padding-bottom: 80px
@@ -145,7 +149,7 @@
     .section-title
       margin-bottom: 70px
     &__count
-      padding: 55px
+      padding: 0 55px
       &--number
         span
           font-size: 90px
