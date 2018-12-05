@@ -1,11 +1,11 @@
 .header
-  position: absolute
+  position: fixed
   top: 0
   left: 0
   right: 0
   padding: 45px 0 10px
   z-index: 10
-  +transition(background 0.25s)
+  +transition(background, padding 0.25s)
   &__wrap
     position: relative
     display: flex
@@ -13,7 +13,7 @@
     align-items: center
   &.sticky
     position: fixed
-    padding: 10px 0
+    padding: 15px 0
     background-color: rgba(#141115, 0.8)
 
 +media-breakpoint-down(lg)

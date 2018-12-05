@@ -1,50 +1,97 @@
 .mountain
   position: relative
-  min-height: 960px
+  min-height: 770px
   -webkit-backface-visibility: hidden
-  // will-change: transform
   &-scene
+    position: relative
     margin: 0
     padding: 0
     list-style: none
+    min-height: 770px
   .layer
     width: 100%
     height: 100%
   &-item
     position: absolute
-    left: 0
-    right: 0
     &-1
       top: 0
-      left: -10%
-      right: -10%
-      height: 1129px
-      background: url('../img/mountains_down.png') no-repeat center bottom / cover
+      left: 0
+      right: 0
+      height: 100%//740px
+      background: url('../img/asteroid_main.png') no-repeat center bottom / contain
     &-2
-      top: 20px
-      right: -10%
-      left: -10%
-      height: 1200px
-      background: url('../img/mountains_up.png') no-repeat center / cover
+      top: 50%
+      transform: translateY(-50%)
+      left: 0
+      width: 28.08%//530px
+      height: 66.23%//510px
+      background: url('../img/big_left.png') no-repeat center bottom / contain
     &-3
-      top: 50px
-      right: -5%
-      height: 1129px
-      background: url('../img/mountains_right.png') no-repeat center bottom / cover
+      top: 50%
+      transform: translateY(-50%)
+      right: 0
+      width: 25.33%//470px
+      height: 69.42%//535px
+      background: url('../img/big_right.png') no-repeat center bottom / contain
     &-4
-      top: 50px
-      left: -5%
-      height: 1129px
-      background: url('../img/mountains_left.png') no-repeat center bottom / cover
+      top: 30%
+      right: 30%
+      width: 14.8%//280px
+      height: 30%//230px
+      background: url('../img/mid1.png') no-repeat center bottom / contain
+    &-5
+      top: 30%
+      left: 30%
+      width: 9%//170px
+      height: 33.8%//260px
+      background: url('../img/mid2.png') no-repeat center bottom / contain
+    &-6
+      bottom: 10%
+      left: 40%
+      width: 10.3%//195px
+      height: 17.6%//135px
+      background: url('../img/mid3.png') no-repeat center bottom / contain
+    &-7
+      top: 10%
+      right: 25%
+      width: 5.6%//105px
+      height: 14.3%//110px
+      background: url('../img/mid4.png') no-repeat center bottom / contain
+    // &-3
+    //   top: 50px
+    //   right: -5%
+    //   height: 1129px
+    //   background: url('../img/mountains_right.png') no-repeat center bottom / cover
+    // &-4
+    //   top: 50px
+    //   left: -5%
+    //   height: 1129px
+    //   background: url('../img/mountains_left.png') no-repeat center bottom / cover
+
+// +media-breakpoint-down(md)
+//   .mountain-item-1
+//     top: 10px
+//     left: -7%
+
++media-breakpoint-down(lg)
+  .mountain
+    &-scene
+      min-height: 550px
 
 +media-breakpoint-down(md)
-  .mountain-item-1
-    top: 10px
-    left: -7%
+  .mountain
+    min-height: 500px
+    &-scene
+      min-height: 450px
 
 +media-breakpoint-down(sm)
   .mountain
-    min-height: 400px
-    &-item
-      &-1, &-2, &-3, &-4
-        height: 500px
+    min-height: 350px
+    &-scene
+      min-height: 350px
+
++media-breakpoint-down(xs)
+  .mountain
+    min-height: 300px
+    &-scene
+      min-height: 200px
