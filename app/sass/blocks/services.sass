@@ -57,20 +57,27 @@
     top: 0
     left: 0
     z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      +size(0)
+      border-radius: 50%
+      z-index: -1
     &--orange
-      img
-        filter: drop-shadow(0 0 30px $balze-orange)
-    &--green
-      img
-        filter: drop-shadow(0 6px 20px $accent)
       &::before
-        left: -65px
+        box-shadow: 0 0 115px 25px rgba($balze-orange, 0.8)
+    &--green
+      &::before
+        box-shadow: 0 0 115px 25px rgba($accent, 0.8)
     &--blue
-      img
-        filter: drop-shadow(0 0 30px $azure-radiance)
+      &::before
+        box-shadow: 0 0 115px 25px rgba($azure-radiance, 0.8)
     &--pink
-      img
-        filter: drop-shadow(0 0 20px $amaranth)
+      &::before
+        box-shadow: 0 0 115px 25px rgba($amaranth, 0.8)
 
 +media-breakpoint-down(lg)
   .services
